@@ -14,18 +14,18 @@ const MusicExperience = () => {
                 <h1 className='text-white font-secoundary font-semibold text-5xl leading-[60px] w-[443px] pl-[56px] py-8'>Enhance Your Music Experience</h1>
                 <div className='pl-[56px] flex gap-4 items-center pb-[32px]'>
                    
-                    <p className='bg-white rounded-full h-[62px] text-[12px] font-semibold font-primary w-[62px] flex flex-col items-center justify-center'>{moment().hours()} 
+                    <div className='bg-white rounded-full h-[62px] text-[12px] font-semibold font-primary w-[62px] flex flex-col items-center justify-center'>{moment().hours()} 
                         <p>Hours</p>
-                    </p>
-                    <p className='bg-white rounded-full h-[62px] text-[12px] font-semibold font-primary w-[62px] flex flex-col items-center justify-center'>{moment().days()} 
+                    </div>
+                    <div className='bg-white rounded-full h-[62px] text-[12px] font-semibold font-primary w-[62px] flex flex-col items-center justify-center'>{moment().days()} 
                         <p>Days</p>
-                    </p>
-                    <p className='bg-white rounded-full h-[62px] text-[12px] font-semibold font-primary w-[62px] flex flex-col items-center justify-center'>{moment().minutes()} 
+                    </div>
+                    <div className='bg-white rounded-full h-[62px] text-[12px] font-semibold font-primary w-[62px] flex flex-col items-center justify-center'>{moment().minutes()} 
                         <p>Minutes</p>
-                    </p>
-                    <p className='bg-white rounded-full h-[62px] text-[12px] font-semibold font-primary w-[62px] flex flex-col items-center justify-center'>{moment().seconds()} 
+                    </div>
+                    <div className='bg-white rounded-full h-[62px] text-[12px] font-semibold font-primary w-[62px] flex flex-col items-center justify-center'>{moment().seconds()} 
                         <p>Seconds</p>
-                    </p>
+                    </div>
                     
                   
                  
