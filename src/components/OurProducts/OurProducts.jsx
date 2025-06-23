@@ -8,17 +8,78 @@ import cat from '../../assets/cat.png';
 import camera from '../../assets/camera.png';
 import laptop from '../../assets/laptop.png'
 import Button from '../Button/Button';
+import { useState } from 'react';
 
 const OurProducts = () => {
+    const [visible,setvisible] =useState(4);
+    const handleLoadData = () =>{
+        setvisible((prev) => prev+4);
+      
+    }
+
+
+    const products = [
+        {
+            name:'The north coat',
+            price:'$266',
+            image:cat
+        },
+      
+        // {
+        //    name:'The north coat',
+        //       price:'$266',
+        //     image:camera
+        // },
+        // {
+        //    name:'The north coat',
+        //     price:'$266',
+        //     image:laptop
+        // },
+        // {
+        //    name:'The north coat',
+        //     price:'$266',
+        //     image:cat
+        // },
+        // {
+        //   name:'The north coat',
+        //    price:'$266',
+        //     image:camera
+        // },
+        // {
+        //    name:'The north coat',
+        //     price:'$266',
+        //     image:laptop
+        // },
+        // {
+        //   name:'The north coat',
+        //   price:'$266',
+        //     image:cat
+        // },
+        // {
+        //     name:'The north coat',
+        //     price:'$266',
+        //     image:camera
+        // },
+        // {
+        //    name:'The north coat',
+        //     price:'$266',
+        //     image:laptop
+        // },
+    ]
     return (
         <div>
             <Container>
-              <div className='pb-[122px]  relative after:absolute after:content-[" "] after:bg-[#D9D9D9] after:h-[1px] after:w-full   after:top-0 after:left-0 '>
+              <div className='pb-[122px] pt-[120px]'>
                     <Title   name="This Month" title='Best Selling Products' />
-                   <div className='grid grid-cols-4 gap-[30px]'>
+              {
+                products.slice(0,visible).map((product =>(
+                    
+                    
+
+                       <div className='flex flex-wrap items-center  gap-[30px]'>
                  <div>
                        <div className= 'bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]'>
-                        <img src={cat} alt="" />
+                        <img src={product.image} alt="" />
 
                            <div className=' bottom-0  absolute left-0 '>
                               <button className=" py-[7px] font-medium text-white font-primary  w-full leading-[24px] text-[15px] px-[90px] join-item   hover:bg-black hover:rounded-b-md hover:text-white ">Add To Cart</button>
@@ -40,6 +101,7 @@ const OurProducts = () => {
                          <p className='font-primary font-medium text-base text-primary1'>$260</p>
                          <del className='font-primary font-medium text-base ml-2'>$360</del>
                       </div>
+
                        <div className='pt-2 flex items-center '>
                         <TiStarFullOutline  className='text-[#FFAD33] text-2xl text-start'/>
                         <TiStarFullOutline  className='text-[#FFAD33] text-2xl text-start'/>
@@ -50,9 +112,10 @@ const OurProducts = () => {
                        </div>
 
                  </div>
+
                  <div>
                        <div className= 'bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]'>
-                        <img src={camera} alt="" />
+                        <img src={product.image} alt="" />
 
                            <div className=' bottom-0  absolute left-0 '>
                               <button className=" py-[7px] font-medium text-white font-primary  w-full leading-[24px] text-[15px] px-[90px] join-item   hover:bg-black hover:rounded-b-md hover:text-white ">Add To Cart</button>
@@ -83,9 +146,10 @@ const OurProducts = () => {
                        </div>
 
                  </div>
+
                  <div>
                        <div className= 'bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]'>
-                        <img src={laptop} alt="" />
+                        <img src={product.image} alt="" />
 
                            <div className=' bottom-0  absolute left-0 '>
                               <button className=" py-[7px] font-medium text-white font-primary  w-full leading-[24px] text-[15px] px-[90px] join-item   hover:bg-black hover:rounded-b-md hover:text-white ">Add To Cart</button>
@@ -117,10 +181,11 @@ const OurProducts = () => {
                        </div>
 
                  </div>
+
                  <div>
                        <div className= 'bg-[#F5F5F5] relative flex flex-col items-center justify-center w-[270px] h-[250px]'>
                        
-                        <img src={cat} alt="" />
+                        <img src={product.image} alt="" />
                          <div className=' bottom-0  absolute left-0 '>
                               <button className=" py-[7px] font-medium text-white font-primary  w-full leading-[24px] text-[15px] px-[90px] join-item   hover:bg-black hover:rounded-b-md hover:text-white ">Add To Cart</button>
                            </div>
@@ -152,12 +217,11 @@ const OurProducts = () => {
                        </div>
 
                  </div>
-                  </div>
-{/* ================================================= */}
-                <div className='py-[60px] gap-[30px] flex items-center justify-between'>
+
+
                     <div >
                        <div className= 'bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]'>
-                        <img src={cat} alt="" />
+                        <img src={product.image} alt="" />
 
                            <div className=' bottom-0  absolute left-0 '>
                               <button className=" py-[7px] font-medium text-white font-primary  w-full leading-[24px] text-[15px] px-[90px] join-item   hover:bg-black hover:rounded-b-md hover:text-white ">Add To Cart</button>
@@ -191,7 +255,7 @@ const OurProducts = () => {
                  </div>
                  <div>
                        <div className= 'bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]'>
-                        <img src={camera} alt="" />
+                        <img src={product.image} alt="" />
 
                            <div className=' bottom-0  absolute left-0 '>
                               <button className=" py-[7px] font-medium text-white font-primary  w-full leading-[24px] text-[15px] px-[90px] join-item   hover:bg-black hover:rounded-b-md hover:text-white ">Add To Cart</button>
@@ -224,7 +288,7 @@ const OurProducts = () => {
                  </div>
                  <div>
                        <div className= 'bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]'>
-                        <img src={laptop} alt="" />
+                        <img src={product.image} alt="" />
 
                            <div className=' bottom-0  absolute left-0 '>
                               <button className=" py-[7px] font-medium text-white font-primary  w-full leading-[24px] text-[15px] px-[90px] join-item   hover:bg-black hover:rounded-b-md hover:text-white ">Add To Cart</button>
@@ -259,7 +323,7 @@ const OurProducts = () => {
                  <div>
                        <div className= 'bg-[#F5F5F5] relative flex flex-col items-center justify-center w-[270px] h-[250px]'>
                        
-                        <img src={cat} alt="" />
+                        <img src={product.image} alt="" />
                          <div className=' bottom-0  absolute left-0 '>
                               <button className=" py-[7px] font-medium text-white font-primary  w-full leading-[24px] text-[15px] px-[90px] join-item   hover:bg-black hover:rounded-b-md hover:text-white ">Add To Cart</button>
                            </div>
@@ -291,11 +355,15 @@ const OurProducts = () => {
                        </div>
 
                  </div>
+
+               
                 </div>
+                )))
+              }
                    
                   
-                    <div className=' text-center text-white'>
-                       <Button name="View All Products"/>
+                    <div onClick={handleLoadData} className=' text-center pt-15 text-white'>
+                       <Button  name="View All Products"/>
                     </div>
                 </div>
             </Container>
