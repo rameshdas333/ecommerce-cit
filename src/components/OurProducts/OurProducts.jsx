@@ -5,7 +5,7 @@ import Title from '../Title/Title';
 import { IoEyeOutline } from 'react-icons/io5';
 import { TiStarFullOutline } from 'react-icons/ti';
 import cat from '../../assets/cat.png';
-// import camera from '../../assets/camera.png';
+import camera from '../../assets/camera.png';
 // import laptop from '../../assets/laptop.png'
 import Button from '../Button/Button';
 import { useState } from 'react';
@@ -30,7 +30,7 @@ const OurProducts = () => {
         {
            name:'The north coat',
               price:'$266',
-           image:cat
+           image:camera
         },
         {
            name:'The north coat',
@@ -69,63 +69,72 @@ const OurProducts = () => {
         },
     ]
     return (
-        <div>
-            <Container>
-              <div className='pb-[122px] pt-[120px]'>
+      <div>
+        <Container>
+          <div className="pb-[122px] pt-[120px]">
+            <Title name="This Month" title="Best Selling Products" />
 
-                    <Title   name="This Month" title='Best Selling Products' />
+            <div className="flex flex-wrap gap-[30px]">
+              {products.slice(0, visible).map((product, idx) => (
+                <div key={idx} className="">
+                  <div className="bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]">
+                    <img src={product.image} alt="" />
+                    <div className="absolute top-3 flex flex-col gap-2  right-3">
+                      <div className="flex items-center justify-center h-[34px] bg-white rounded-full  w-[34px]">
+                        <GoHeart />
+                      </div>
+                      <div className="flex items-center justify-center  h-[34px] bg-white rounded-full  w-[34px]">
+                        <IoEyeOutline />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="pt-4 pb-2 font-primary font-medium text-base">
+                    {product.name}
+                  </p>
+                  <div className="flex">
+                    <p className="font-primary font-medium text-base text-primary1">
+                      {product.price}
+                    </p>
+                    <del className="font-primary font-medium text-base ml-2">
+                      $360
+                    </del>
+                  </div>
 
-              {
-                products.slice(0, visible).map(((product, idx) =>(
-                    
-                    
-
-                       <div key={idx} className='flex flex-wrap  gap-[30px]'>
-               
-                       
-                       
-                      
-                                      
-                                             <div className= 'bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]'>
-                                              <img src={product.image} alt="" />
-                                              <div className='absolute top-3 flex flex-col gap-2  right-3'>
-                                                  <div className='flex items-center justify-center h-[34px] bg-white rounded-full  w-[34px]'>
-                                                      <GoHeart />
-                                                  </div>
-                                                 <div className='flex items-center justify-center  h-[34px] bg-white rounded-full  w-[34px]'>
-                                                      <IoEyeOutline/>
-                                                  </div>
-                                                
-                                              </div>
-                      
-                                             </div>
-                                             <p className='pt-4 pb-2 font-primary font-medium text-base'>The north coat</p>
-                                            <div className='flex'>
-                                               <p className='font-primary font-medium text-base text-primary1'>$260</p>
-                                               <del className='font-primary font-medium text-base ml-2'>$360</del>
-                                            </div>
-                                             <div className='pt-2 flex items-center '>
+              <div className='flex items-center'>
+                    {[...Array(5)].map((_, starIdx) => (
+                    <TiStarFullOutline
+                      key={starIdx}
+                      className={`text-2xl ${
+                        starIdx < product.rating
+                          ? "text-gray-300" 
+                          : "text-[#FFAD33]"
+                      }`}
+                    />
+                  ))}
+              </div>
+                  {/* <div className='pt-2 flex items-center '>
                                               <TiStarFullOutline  className='text-[#FFAD33] text-2xl text-start'/>
                                               <TiStarFullOutline  className='text-[#FFAD33] text-2xl text-start'/>
                                               <TiStarFullOutline className='text-[#FFAD33] text-2xl text-start'/>
                                               <TiStarFullOutline  className='text-[#FFAD33] text-2xl text-start'/>
                                               <TiStarFullOutline  className='text-[#FFAD33] text-2xl text-start'/>
                                               <p className='ml-2 font-primary font-medium text-base '> (65)</p>
-                                             </div>
-                      
+                                             </div> */}
+                </div>
+              ))}
+            </div>
 
-                </div>
-                 
-                )))
-              }
-                   
-                  
-                    <div onClick={handleLoadData} className=' text-center pt-15 text-white'>
-                       <Button  name="View All Products"/>
-                    </div>
-                </div>
-            </Container>
-        </div>
+            {visible < products.length && (
+              <div
+                onClick={handleLoadData}
+                className=" text-center pt-15 text-white"
+              >
+                <Button name="View All Products" />
+              </div>
+            )}
+          </div>
+        </Container>
+      </div>
     );
 };
 
