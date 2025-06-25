@@ -5,8 +5,30 @@ import Frame1 from '../../assets/Frame1.png'
 import Frame2 from '../../assets/Frame2.png'
 import Frame3 from '../../assets/Frame3.png'
 import Frame4 from '../../assets/Frame 4.png'
+import Service1 from '../../assets/Services.png'
+import Service2 from '../../assets/Services (1).png'
+import Service3 from '../../assets/Services (2).png'
 
 const NewArrival = () => {
+
+    const services = [
+        {
+           image:Service1,
+           service:'FREE AND FAST DELIVERY',
+           name:'Free delivery for all orders over $140'
+        },
+          {
+           image:Service2,
+           service:'24/7 CUSTOMER SERVICE',
+           name:'Friendly 24/7 customer support'
+        },
+        {
+           image:Service3,
+           service:'MONEY BACK GUARANTEE',
+           name:'We reurn money within 30 days'
+        },
+      
+    ]
     return (
         <div>
             <Container>
@@ -26,6 +48,20 @@ const NewArrival = () => {
                             </div>
                         </div>
 
+                    </div>
+
+                    {/* service part  */}
+
+                    <div className='grid grid-cols-3 w-[970px] my-[174px] mx-auto  gap-[88px]'>
+                     {
+                        services.map(service =>(
+                            <div className='flex  flex-col items-center justify-center'>
+                                <img className='pb-6' src={service.image} alt="" />
+                                <h3 className='font-secoundary pb-2 font-semibold text-xl leading-7'>{service.service}</h3>
+                                <p className='w-[249px] font-primary text-sm  '>{service.name}</p>
+                            </div>
+                        ))
+                     }
                     </div>
 
                     

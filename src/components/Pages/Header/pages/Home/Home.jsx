@@ -7,6 +7,7 @@ import BestSellingProduct from '../../../../BestSellingProduct/BestSellingProduc
 import MusicExperience from '../../../../MusicExperience/MusicExperience';
 import OurProducts from '../../../../OurProducts/OurProducts';
 import NewArrival from '../../../../NewArrival/NewArrival';
+import Footer from '../../../../Foooter/Footer';
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
         <MusicExperience/>
         <OurProducts/>
         <NewArrival/>
+        <Footer/>
       
         
        

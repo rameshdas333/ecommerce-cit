@@ -6,7 +6,7 @@ import { IoEyeOutline } from 'react-icons/io5';
 import { TiStarFullOutline } from 'react-icons/ti';
 import cat from '../../assets/cat.png';
 import camera from '../../assets/camera.png';
-// import laptop from '../../assets/laptop.png'
+import laptop from '../../assets/laptop.png'
 import Button from '../Button/Button';
 import { useState } from 'react';
 
@@ -22,8 +22,8 @@ const OurProducts = () => {
 
     const products = [
         {
-            name:'The north coat',
-            price:'$266',
+            name:'Breed Dry Dog Food',
+            price:'$100',
             image:cat
         },
       
@@ -35,37 +35,37 @@ const OurProducts = () => {
         {
            name:'The north coat',
             price:'$266',
-           image:cat
+           image:laptop
         },
         {
-           name:'The north coat',
-            price:'$266',
+           name:'Breed Dry Dog Food',
+            price:'$100',
             image:cat
         },
         {
           name:'The north coat',
            price:'$266',
-             image:cat
+             image:camera
         },
         {
            name:'The north coat',
             price:'$266',
-          image:cat
+          image:laptop
         },
         {
-          name:'The north coat',
-          price:'$266',
+          name:'Breed Dry Dog Food',
+          price:'$100',
             image:cat
         },
         {
             name:'The north coat',
             price:'$266',
-             image:cat
+             image:camera
         },
         {
            name:'The north coat',
             price:'$266',
-           image:cat
+           image:laptop
         },
     ]
     return (
@@ -91,16 +91,11 @@ const OurProducts = () => {
                   <p className="pt-4 pb-2 font-primary font-medium text-base">
                     {product.name}
                   </p>
-                  <div className="flex">
+                  <div className="flex items-center gap-2 ">
                     <p className="font-primary font-medium text-base text-primary1">
                       {product.price}
                     </p>
-                    <del className="font-primary font-medium text-base ml-2">
-                      $360
-                    </del>
-                  </div>
-
-              <div className='flex items-center'>
+                      <div className='flex items-center'>
                     {[...Array(5)].map((_, starIdx) => (
                     <TiStarFullOutline
                       key={starIdx}
@@ -112,6 +107,9 @@ const OurProducts = () => {
                     />
                   ))}
               </div>
+                  </div>
+
+            
                   {/* <div className='pt-2 flex items-center '>
                                               <TiStarFullOutline  className='text-[#FFAD33] text-2xl text-start'/>
                                               <TiStarFullOutline  className='text-[#FFAD33] text-2xl text-start'/>

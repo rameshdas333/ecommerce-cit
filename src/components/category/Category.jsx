@@ -6,14 +6,7 @@ import Container from '../container/Container';
 
 const Category = () => {
 
-//     const categories = [
-//   { name: "Phones", icon:"📱"  },
-//   { name: "Computers", icon: "🖥️" },
-//   { name: "SmartWatch", icon: "⌚" },
-//   { name: "Camera", icon: "📷", active: true },
-//   { name: "HeadPhones", icon: "🎧" },
-//   { name: "Gaming", icon: "🎮", focus: true },
-// ];
+
     return (
       <div className="pt-[153px] pb-[95px]">
         <Container>
