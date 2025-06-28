@@ -7,7 +7,7 @@ import BestSellingProduct from '../../../../BestSellingProduct/BestSellingProduc
 import MusicExperience from '../../../../MusicExperience/MusicExperience';
 import OurProducts from '../../../../OurProducts/OurProducts';
 import NewArrival from '../../../../NewArrival/NewArrival';
-import Footer from '../../../../Foooter/Footer';
+
 
 
 
@@ -15,15 +15,14 @@ import Footer from '../../../../Foooter/Footer';
 const Home = () => {
     return (
         <div>
-        <Header/>
-        <Navbar/>
+      
         <Banner/>
         <Category/>
         <BestSellingProduct/>
         <MusicExperience/>
         <OurProducts/>
         <NewArrival/>
-        <Footer/>
+        
       
         
        

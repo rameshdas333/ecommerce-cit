@@ -1,12 +1,11 @@
 
-import React from 'react';
-import Header from './components/Pages/Header/Header';
-import Home from './components/Pages/Header/pages/Home/Home';
+import { RouterProvider } from 'react-router-dom';
+import router from './components/Routes/Routes';
 
 const App = () => {
   return (
     <>
-     <Home/>
+   <RouterProvider router={router} />
     </>
   );
 };

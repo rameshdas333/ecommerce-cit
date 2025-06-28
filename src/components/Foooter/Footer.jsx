@@ -1,4 +1,6 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import App from '../../assets/APP.png'
+import Qrcode from '../../assets/Qrcode 1.png'
 
 export default function Footer() {
   return (
@@ -55,10 +57,10 @@ export default function Footer() {
           <h3 className="font-semibold mb-4">Download App</h3>
           <p className="text-sm mb-4">Save $3 with App New User Only</p>
           <div className="flex gap-2 mb-4">
-            <img src="/qrcode.png" alt="QR Code" className="w-16" />
+            <img src={Qrcode} alt="QR Code" className="w-16" />
             <div className="flex flex-col gap-2">
-              <img src="/googleplay.png" alt="Google Play" className="w-24" />
-              <img src="/appstore.png" alt="App Store" className="w-24" />
+              <img src={App} alt="Google Play" className="w-24" />
+             
             </div>
           </div>
           <div className="flex space-x-3 mt-4 text-white text-lg">

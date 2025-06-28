@@ -2,6 +2,7 @@ import React from 'react';
 import logo from  "../../../../assets/logo.png"
 import { CiHeart} from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -14,16 +15,19 @@ const Navbar = () => {
           <div className="w-[40%]">
             <ul className="flex space-x-12">
               <li className='text-base text-black'>
-                <a href="">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li className='text-base text-black'>
-                <a href="">Contact</a>
+                <Link to="/product">Product</Link>
               </li>
               <li className='text-base text-black'>
-                <a href="">About</a>
+                <Link to="/contact">Contact</Link>
               </li>
               <li className='text-base text-black'>
-                <a href="">Sign Up</a>
+                <Link to="/about">About</Link>
+              </li>
+              <li className='text-base text-black'>
+                <Link to="/signup">Sign Up</Link>
               </li>
             </ul>
           </div>
