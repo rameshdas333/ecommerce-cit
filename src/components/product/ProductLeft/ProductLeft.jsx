@@ -26,6 +26,25 @@ const ProductLeft = () => {
 
                )) 
             }
+            <h1 className='font-primary text-[#262626] text-xl pt-10  font-bold'>Shop by Color</h1>
+            <div>
+               <div>
+               <div className='flex gap-[10px] items-center'>
+                <div className='w-[11px] h-[11px] bg-black rounded-full flex justify-between gap-[10px]'> </div>
+                <p className='text-base font-primary py-4 text-[#767676] '>Color 1</p>
+               </div>
+               <div className='flex gap-[10px] items-center'>
+                <div className='w-[11px] h-[11px] bg-red-600 rounded-full flex justify-between gap-[10px]'> </div>
+                <p className='text-base font-primary text-[#767676] '>Color 1</p>
+               </div>
+               <div className='flex gap-[10px] items-center'>
+                <div className='w-[11px] h-[11px] bg-[#00FF38] rounded-full flex justify-between gap-[10px]'> </div>
+                <p className='text-base font-primary text-[#767676] py-4 '>Color 1</p>
+               </div>
+             
+            
+               </div>
+            </div>
         </div>
     );
 };

@@ -79,6 +79,8 @@ const OurProducts = () => {
                 <div key={idx} className="">
                   <div className="bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]">
                     <img src={product.image} alt="" />
+                   
+
                     <div className="absolute top-3 flex flex-col gap-2  right-3">
                       <div className="flex items-center justify-center h-[34px] bg-white rounded-full  w-[34px]">
                         <GoHeart />
@@ -86,8 +88,11 @@ const OurProducts = () => {
                       <div className="flex items-center justify-center  h-[34px] bg-white rounded-full  w-[34px]">
                         <IoEyeOutline />
                       </div>
+                     
                     </div>
+                       <button className='absolute bottom-0 left-0 w-full rounded-[4px] py-1 hover:bg-black text-white'>Add to cart</button>
                   </div>
+                  
                   <p className="pt-4 pb-2 font-primary font-medium text-base">
                     {product.name}
                   </p>
@@ -106,6 +111,8 @@ const OurProducts = () => {
                       }`}
                     />
                   ))}
+
+                 
               </div>
                   </div>
 
