@@ -9,6 +9,7 @@ import camera from '../../assets/camera.png';
 import laptop from '../../assets/laptop.png'
 import Button from '../Button/Button';
 import { useState } from 'react';
+import Pagenation from './Pagenation';
 
 const OurProducts = () => {
     const [visible, setVisible] =useState(4);
@@ -18,6 +19,8 @@ const OurProducts = () => {
         
       
     }
+
+   
 
 
     const products = [
@@ -75,7 +78,8 @@ const OurProducts = () => {
             <Title name="This Month" title="Best Selling Products" />
 
             <div className="flex flex-wrap gap-[30px]">
-              {products.slice(0, visible).map((product, idx) => (
+              {
+              products.slice(0, visible).map((product, idx) => (
                 <div key={idx} className="">
                   <div className="bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]">
                     <img src={product.image} alt="" />
@@ -126,7 +130,11 @@ const OurProducts = () => {
                                               <p className='ml-2 font-primary font-medium text-base '> (65)</p>
                                              </div> */}
                 </div>
-              ))}
+              ))
+              
+              }
+
+
             </div>
 
             {visible < products.length && (
@@ -137,6 +145,8 @@ const OurProducts = () => {
                 <Button name="View All Products" />
               </div>
             )}
+
+           
           </div>
         </Container>
       </div>

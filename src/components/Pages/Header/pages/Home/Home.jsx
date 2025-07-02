@@ -5,8 +5,10 @@ import Banner from '../../../../Banner/Banner';
 import Category from '../../../../category/category';
 import BestSellingProduct from '../../../../BestSellingProduct/BestSellingProduct';
 import MusicExperience from '../../../../MusicExperience/MusicExperience';
-import OurProducts from '../../../../OurProducts/OurProducts';
+
 import NewArrival from '../../../../NewArrival/NewArrival';
+import OurProducts from '../../../../OurProducts/OurProducts';
+
 
 
 
