@@ -87,7 +87,7 @@ const ProductRight = () => {
       .then(res => res.json())
       .then(data => setProductData(data.products));
   }, []);
- console.log(productData)
+//  console.log(productData)
   // Calculate page data
   const totalPages = Math.ceil(productData.length / productsPerPage);
   const indexOfLast = currentPage * productsPerPage;
@@ -99,7 +99,7 @@ const ProductRight = () => {
       <div className="grid grid-cols-3 gap-[30px]">
         {currentProducts.map((product, idx) => (
           <Link to={`/product/${product.id}`} key={idx}>
-            <div className="bg-[#F5F5F5] rounded relative flex items-center justify-center w-[270px] h-[250px]">
+            <div className="bg-[#F5F5F5] group rounded relative flex items-center justify-center w-[270px] h-[250px]">
               <img className="w-[200px] h-[150px]" src={product.thumbnail} alt="" />
               <div className="absolute top-3 right-3 flex flex-col gap-2">
                 <div className="flex items-center justify-center h-[34px] w-[34px] bg-white rounded-full">
@@ -109,7 +109,7 @@ const ProductRight = () => {
                   <IoEyeOutline />
                 </div>
               </div>
-              <button  className="absolute bottom-0 left-0 w-full py-1 rounded-[4px] hover:bg-black text-white duration-100">
+              <button  className="absolute bottom-0 left-0 w-full py-1 rounded-[4px] bg-black hidden group-hover:block text-white duration-100">
                 Add to cart
               </button>
             </div>

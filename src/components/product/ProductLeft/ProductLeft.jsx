@@ -18,8 +18,8 @@ const ProductLeft = () => {
         <div >
             <h1 className='font-primary text-[#262626] text-xl font-bold '>Shop by Category</h1>
             {
-               shopCategories.map(shop =>(
-                   <div>
+               shopCategories.map((shop,idx) =>(
+                   <div key={idx}  className=''>
                     
                    <Link> <p className='py-3'>{shop.name}</p></Link>
                    </div>

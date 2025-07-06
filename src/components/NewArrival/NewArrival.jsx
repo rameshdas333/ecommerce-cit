@@ -54,8 +54,8 @@ const NewArrival = () => {
 
                     <div className='grid grid-cols-3 w-[970px] my-[174px] mx-auto  gap-[88px]'>
                      {
-                        services.map(service =>(
-                            <div className='flex  flex-col items-center justify-center'>
+                        services.map((service,idx) =>(
+                            <div onClick={idx} className='flex  flex-col items-center justify-center'>
                                 <img className='pb-6' src={service.image} alt="" />
                                 <h3 className='font-secoundary pb-2 font-semibold text-xl leading-7'>{service.service}</h3>
                                 <p className='w-[249px] font-primary text-sm  '>{service.name}</p>

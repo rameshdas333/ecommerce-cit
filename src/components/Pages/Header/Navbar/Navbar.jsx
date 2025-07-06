@@ -56,7 +56,11 @@ const Navbar = () => {
             {/* icon */}
             <div className='flex items-center space-x-4'>
                 <CiHeart className='text-4xl '/>
-                <MdOutlineShoppingCart className='text-4xl' />
+             <Link to={`/cart`}>
+             <MdOutlineShoppingCart className='text-4xl' />
+             
+             </Link>
+                
             </div>
           </div>
         </div>

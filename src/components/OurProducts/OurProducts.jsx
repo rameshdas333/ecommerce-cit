@@ -15,7 +15,7 @@ const OurProducts = () => {
     const [visible, setVisible] =useState(4);
     const handleLoadData = () =>{
         setVisible((prev) => prev+4)
-        console.log("Click me")
+        
         
       
     }
@@ -80,8 +80,8 @@ const OurProducts = () => {
             <div className="flex flex-wrap gap-[30px]">
               {
               products.slice(0, visible).map((product, idx) => (
-                <div key={idx} className="">
-                  <div className="bg-[#F5F5F5] relative flex items-center justify-center w-[270px] h-[250px]">
+                <div key={idx} className=" ">
+                  <div className="bg-[#F5F5F5] group relative flex items-center justify-center w-[270px] h-[250px]">
                     <img src={product.image} alt="" />
                    
 
@@ -94,7 +94,7 @@ const OurProducts = () => {
                       </div>
                      
                     </div>
-                       <button className='absolute bottom-0 left-0 w-full rounded-[4px] py-1 hover:bg-black text-white'>Add to cart</button>
+                       <button className='absolute bottom-0 left-0 w-full rounded-[4px] py-1 group-hover:block hidden bg-black text-white'>Add to cart</button>
                   </div>
                   
                   <p className="pt-4 pb-2 font-primary font-medium text-base">

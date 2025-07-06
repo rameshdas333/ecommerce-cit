@@ -1,6 +1,7 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import App from '../../assets/APP.png'
 import Qrcode from '../../assets/Qrcode 1.png'
+import { FiSend } from 'react-icons/fi';
 
 export default function Footer() {
   return (
@@ -11,14 +12,26 @@ export default function Footer() {
         <div>
           <h2 className="text-xl font-bold">Exclusive</h2>
           <p className="mt-4 text-sm">Get 10% off your first order</p>
-          <div className="mt-4 flex">
+          {/* <div className="mt-4 flex">
             <input
               type="email"
               placeholder="Enter your email"
               className="px-3 py-2 text-black w-full"
             />
             <button className="bg-white text-black px-3">→</button>
-          </div>
+          </div> */}
+
+
+          <div className="flex mt-10 items-center border border-gray-500 rounded px-2 py-1 w-fit">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="bg-black text-gray-300 placeholder-gray-500 focus:outline-none px-2"
+      />
+      <button>
+        <FiSend className="text-gray-300" />
+      </button>
+    </div>
         </div>
 
         {/* Support */}
