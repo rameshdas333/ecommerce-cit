@@ -14,7 +14,7 @@ const BannerRight = () => {
     arrows:false,
   };
     return (
-   <div className="w-[80%] pt-10 pl-10">
+   <div className="w-full lg:w-[80%] pt-10 lg:pl-10">
          <Slider {...settings}>
       <div>
        <img className="w-full" src={banner} alt="" />

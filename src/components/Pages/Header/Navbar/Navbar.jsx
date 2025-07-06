@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
       <nav className=" pt-[42px] pb-[14px]  border-b-[2px] border-[#D9D9D9]">
-        <div className='w-[1170px] mx-auto flex items-center justify-center'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between'>
           <div className="w-[20%]">
             <img src={logo} alt="" />
           </div>
 
-          <div className="w-[40%]">
+          <div className="hidden lg:flex w-[40%]">
             <ul className="flex space-x-12">
               <li className='text-base text-black'>
                 <Link to="/">Home</Link>
@@ -32,10 +32,18 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="w-[40%] flex items-center  justify-end space-x-6">
+          <div className="w-[40%] flex items-center justify-end space-x-6">
+            {/* Mobile menu button */}
+            <div className="lg:hidden">
+              <button className="p-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
             <label className="input relative bg-[#F5F5F5] outline-none">
              
-              <input className='w-[243px]  rounded px-5 py-2' type="search" required placeholder="What are you looking for?" />
+              <input className='w-full sm:w-[243px] rounded px-5 py-2' type="search" required placeholder="What are you looking for?" />
                <svg
                 className="h-[1em] absolute text-xl text-black top-[9px] pr-2 right-0 "
                 xmlns="http://www.w3.org/2000/svg"
