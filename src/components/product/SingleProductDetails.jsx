@@ -9,10 +9,13 @@ import {  Link, useParams } from 'react-router-dom'
 import DeliberyIMG from '../../assets/Delivery.png'
 import Delivery from './ProductRight/Delivery';
 import Rating from '../rating/Rating';
+import { useDispatch } from 'react-redux';
+import { cartTotal } from '../slices/CartSlice';
 
 
 const SingleProductDetails = () => {
     const {id} = useParams()
+    const dispatch = useDispatch()
     console.log(id,'id')
 const [productData,setProductData] = useState([])
 const [selectImg,setSelectImg] = useState()
@@ -29,6 +32,9 @@ const [selectImg,setSelectImg] = useState()
         if(singleProduct?.thumbnail)
             setSelectImg(singleProduct?.thumbnail)
      },[singleProduct])
+     const handleAddTocart = (product) =>{
+     dispatch(cartTotal(product))
+     }
     return (
              <div className='grid grid-cols-6 gap-4 mt-20'>
                 <div className='col-span-1 '>
@@ -94,9 +100,9 @@ const [selectImg,setSelectImg] = useState()
                    <p className='text-[14px] font-primary'>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</p>
                    <div className='relative after:absolute after:content-[""] after:top-6 after:h-[2px] after:w-[400px]  after:bg-gray-200 '></div>
                 
-                    <Link to={`/cart`}>
+                    <Link onClick={()=>handleAddTocart(singleProduct)}>
                       <div    className=' pt-20'>
-                     <Button name="Add to Cart"/>
+                     <Button  name="Add to Cart"/>
                   </div>
                     
                     </Link>
