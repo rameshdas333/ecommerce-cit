@@ -6,6 +6,7 @@ import Product from "../product/Product";
 import ProductDetails from "../product/ProductDetails";
 import About from "../Pages/Header/pages/About";
 import Cart from "../Pages/Header/pages/Cart";
+import SignUp from "../Pages/Header/pages/signup/SignUp";
 
  const router = createBrowserRouter([
     {
@@ -17,6 +18,7 @@ import Cart from "../Pages/Header/pages/Cart";
             {path:"product/:id", Component: ProductDetails},
             {path:"/cart", Component: Cart},
             {path:"/about", Component: About},
+            {path:"/signup",Component:SignUp}
         ]
     }
 ])

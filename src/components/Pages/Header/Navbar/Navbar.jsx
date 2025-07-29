@@ -3,8 +3,19 @@ import logo from  "../../../../assets/logo.png"
 import { CiHeart} from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 const Navbar = () => {
+
+    const data = useSelector(state=>state.cartDetails.cartItems)
+    
+    // console.log(data,'data')
+    const cartlength = data.reduce((prev,current)=>{
+        // console.log(current.price,'pricee')
+        return prev + current.cartQun
+    },0)
+    console.log(cartlength)
     return (
       <nav className=" pt-[42px] pb-[14px]  border-b-[2px] border-[#D9D9D9]">
         <div className='w-[1170px] mx-auto flex items-center justify-center'>
@@ -57,7 +68,11 @@ const Navbar = () => {
             <div className='flex items-center space-x-4'>
                 <CiHeart className='text-4xl '/>
              <Link to={`/cart`}>
+             <div className='bg-amber-500 text-white text-center w-6 h-6 rounded-full'>
+              {cartlength}
+                </div>
              <MdOutlineShoppingCart className='text-4xl' />
+           
              
              </Link>
                 
