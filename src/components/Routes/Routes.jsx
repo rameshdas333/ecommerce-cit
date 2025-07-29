@@ -1,24 +1,28 @@
-import { createBrowserRouter } from "react-router";
-import Home from "../Pages/Header/pages/Home/Home";
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../Main/Main";
-import Contact from "../Pages/Contact";
 import Product from "../product/Product";
 import ProductDetails from "../product/ProductDetails";
-import About from "../Pages/Header/pages/About";
-import Cart from "../Pages/Header/pages/Cart";
-import SignUp from "../Pages/Header/pages/signup/SignUp";
+import Home from "../Pages/Home";
+import About from "../Pages/About";
+import Cart from "../Pages/Cart";
+import SignUp from "../Pages/Signup";
+import LoginPage from "../Pages/LoginPage";
+import BillingDetails from "../billingdetails/BillingDetails";
 
  const router = createBrowserRouter([
     {
         path:"/",
         Component: Main,
         children:[
-            {index:true, Component: Home},
+            {index:true, Component:Home},
             {path:"product", Component: Product},
             {path:"product/:id", Component: ProductDetails},
             {path:"/cart", Component: Cart},
             {path:"/about", Component: About},
-            {path:"/signup",Component:SignUp}
+            {path:"/signup",Component:SignUp},
+            {path:"/loginpage",Component:LoginPage},
+            {path:"/billingdetails",Component:BillingDetails},
+          
         ]
     }
 ])

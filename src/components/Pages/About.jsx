@@ -1,7 +1,7 @@
 
-import Container from '../../../container/Container';
-import AboutLeftside from '../../../Aboutpage/AboutLeftside';
-import AboutRightSide from '../../../Aboutpage/AboutRightSide';
+import Container from '../container/Container';
+import AboutLeftside from '../../components/Aboutpage/AboutLeftSide';
+import AboutRightSide from '../../components/Aboutpage/AboutRightSide';
 
 const About = () => {
     return (

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CartTotal = ({totalPrice,total,discount}) => {
   return (
@@ -16,9 +17,11 @@ const CartTotal = ({totalPrice,total,discount}) => {
         <span>Total:</span>
          <span>${total.toFixed(2)}</span>
       </div>
+     <Link to={`/billingdetails`}>
       <button className="bg-red-500 text-white w-full py-2 rounded hover:bg-red-600">
         Proceed to checkout
       </button>
+     </Link>
     </div>
   );
 };

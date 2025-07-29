@@ -1,15 +1,16 @@
 
-import Container from '../../../container/Container';
-import MonitorImg from '../../../../assets/monitotimg.png'
-import GameImg from '../../../../assets/gameimg.png'
+import MonitorImg from '../../assets/monitotimg.png'
+import GameImg from '../../assets/gameimg.png'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import CartTotal from './CartTotal';
-import Button from '../../../Button/Button';
+
+
 import { useDispatch, useSelector } from 'react-redux';
-import { cartQuentity, removeFromCart } from '../../../slices/CartSlice';
+import { cartQuentity, removeFromCart } from '../slices/CartSlice';
 import { RxCross2 } from 'react-icons/rx';
 import { useState } from 'react';
   import { Bounce, ToastContainer, toast } from 'react-toastify';
+import Container from '../container/Container';
+import CartTotal from '../carttotal/CartTotal';
 ;
 
 
@@ -99,7 +100,7 @@ setCouponText(e.target.value)
                 <p className="w-24">${product.price.toFixed(2)}</p>
                 <div className="w-20  flex p-3 gap-6 border rounded">
                   <p >{product.cartQun}</p>
-                  <div className=''>
+                  <div >
                     <IoIosArrowUp onClick={() => handleIncrement(index)} />
                     <IoIosArrowDown onClick={() => handleDecrement(index)} />
                   </div>

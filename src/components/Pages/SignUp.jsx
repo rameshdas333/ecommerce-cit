@@ -1,6 +1,7 @@
 import React from 'react';
-import signupImg from '../../../../../assets/Signupimg(1).png'
+import signupImg from '../../assets/Signupimg(1).png'
 import { FcGoogle } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
 export default function SignUp() {
   return (
@@ -44,6 +45,7 @@ export default function SignUp() {
               Create Account
             </button>
 
+         <Link to={``}>
             <button
               type="button"
               className="w-full border border-gray-400 py-2 rounded-md flex items-center justify-center gap-2 mt-2"
@@ -51,13 +53,14 @@ export default function SignUp() {
               <FcGoogle />
               Sign up with Google
             </button>
+         </Link>
           </form>
 
           <p className="text-sm text-gray-600 mt-6 text-center">
             Already have an account?{' '}
-            <a href="#" className="text-blue-600 hover:underline">
+            <Link to="/loginpage" className="text-blue-600 hover:underline">
               Log in
-            </a>
+            </Link>
           </p>
         </div>
       </div>

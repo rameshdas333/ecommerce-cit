@@ -1,5 +1,5 @@
-import React from 'react';
-import logo from  "../../../../assets/logo.png"
+
+import logo from  "../../assets/logo.png"
 import { CiHeart} from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -68,7 +68,7 @@ const Navbar = () => {
             <div className='flex items-center space-x-4'>
                 <CiHeart className='text-4xl '/>
              <Link to={`/cart`}>
-             <div className='bg-amber-500 text-white text-center w-6 h-6 rounded-full'>
+             <div className= 'bg-amber-500 flex items-center justify-center text-sm text-black text-center w-6 h-6 rounded-full'>
               {cartlength}
                 </div>
              <MdOutlineShoppingCart className='text-4xl' />
