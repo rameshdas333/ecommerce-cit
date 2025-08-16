@@ -8,6 +8,7 @@ import Cart from "../Pages/Cart";
 import SignUp from "../Pages/Signup";
 import LoginPage from "../Pages/LoginPage";
 import BillingDetails from "../billingdetails/BillingDetails";
+import ErrorPage from "../errorpage/ErrorPage";
 
  const router = createBrowserRouter([
     {
@@ -22,6 +23,7 @@ import BillingDetails from "../billingdetails/BillingDetails";
             {path:"/signup",Component:SignUp},
             {path:"/loginpage",Component:LoginPage},
             {path:"/billingdetails",Component:BillingDetails},
+            {path:"*",Component:ErrorPage},
           
         ]
     }

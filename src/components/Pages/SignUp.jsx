@@ -1,13 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import signupImg from '../../assets/Signupimg(1).png'
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import { Bounce, toast, ToastContainer } from 'react-toastify';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+
 
 export default function SignUp() {
+  const [name,setName] = useState("")
+  const [email,setEmail]= useState("")
+  const [password,setPassword] = useState("")
+
+  const [nameError,setNameError] = useState("")
+  const [emailError,setEmailError] = useState("")
+  const [passwordError,setPasswordError]= useState("")
+  const [show,setShow] = useState(false)
+  const handleName = (e) =>{
+      setName(e.target.value)
+      setNameError(" ")  
+      
+  }
+
+  const handleEmail =(e)=>{
+  setEmail(e.target.value)
+  setEmailError(" ")
+}
+const handlePassword =(e)=>{
+   setPassword(e.target.value)
+   setPasswordError(" ")
+}
+  const handleCreateAccount = (e)=>{
+     e.preventDefault()
+  
+  if(!name){
+    setNameError("please enter your name")
+  }
+  if(!email){
+    setEmailError("Enter your email address")
+  }else{
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+       setEmailError("You email not validate.")
+    }
+     
+  }
+  if(!password){
+      setPasswordError("Enter your password")
+  }else{
+ if (!/^(?=.*[a-zA-Z])(?=.*\d).{6,20}$/.test(password)) {
+  setPasswordError("Password must be at least 6 characters and include letters and numbers"); 
+}
+  }
+  if(name && email && password){
+    toast.success("Account Create Successfully")
+    setName("")
+    setEmail("")
+    setPassword("")
+   
+  }
+  console.log(name,email,password)
+}
+
+
+
   return (
+
+    
     <div className="min-h-screen flex">
+
+         <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition={Bounce}
+/>
       {/* Left side image section */}
       <div className="w-1/2 bg-blue-50 flex items-center justify-center">
+ 
         <img
           src={signupImg}
           alt="Shopping Cart with Mobile"
@@ -22,30 +97,42 @@ export default function SignUp() {
           <p className="text-sm text-gray-600 mb-4">Enter your details below</p>
 
           <form className="space-y-4">
+            <p className='text-red-500'>{nameError}</p>
             <input
+            onChange={handleName}
+              value={name}
               type="text"
               placeholder="Name"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               type="email"
+              value={email}
+              onChange={handleEmail}
+            
               placeholder="Email or Phone Number"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
+            <p className='text-red-500 text-sm'>{emailError}</p>
             <input
-              type="password"
+              type={show ? "text":"password"}
+              onChange={handlePassword}
+              value={password}
+            
               placeholder="Password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="relative  w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          
             />
+           <div className='text-2xl'>
+            {
+                  show ? <p onClick={()=>setShow(!show)}><FaRegEye /></p>:<p onClick={()=>setShow(!show)}><FaRegEyeSlash /></p>
+            }
+           </div>
+            <p className='text-red-500 text-sm'>{passwordError}</p>
 
-            <button
-              type="submit"
-              className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-md"
-            >
-              Create Account
-            </button>
+           <button onClick={handleCreateAccount} className='bg-red-500 text-white px-12 rounded w-full  py-4'> Create Account</button>
 
-         <Link to={``}>
+        
             <button
               type="button"
               className="w-full border border-gray-400 py-2 rounded-md flex items-center justify-center gap-2 mt-2"
@@ -53,7 +140,7 @@ export default function SignUp() {
               <FcGoogle />
               Sign up with Google
             </button>
-         </Link>
+         
           </form>
 
           <p className="text-sm text-gray-600 mt-6 text-center">
