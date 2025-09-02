@@ -8,7 +8,7 @@ import Cart from "../Pages/Cart";
 import BillingDetails from "../billingdetails/BillingDetails";
 import ErrorPage from "../errorpage/ErrorPage";
 import LoginPage from "../Pages/LoginPage";
-import SignUp from "../Pages/Signup";
+import SignUp from "../Pages/SignUp";
 
  const router = createBrowserRouter([
     {
