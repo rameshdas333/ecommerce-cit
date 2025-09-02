@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme{
+    --font-primary:"Poppins", sans-serif;
+    --font-secoundary:"Inter", sans-serif;
+    --color-primary1:#DB4444;
+}
+.slick-dots{
+ bottom: 20px !important;
+ 
+}
+.slick-dots li button {
+    border-radius: 50% !important;
+    background: white !important;
+    /* padding: 3px !important; */
+    height: 14px !important;
+    width: 14px !important;
+   
+   
+}
+.slick-dots li button:before {
+    color: transparent !important;
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: red !important;
+    background-color: transparent !important;
+    font-size: 10px;
+    top: -2px;
+    left: -3.5px;
+       /* display: flex !important;
+   justify-content: center !important;
+   align-items: center !important; */
+ 
+   
+}
+
+
+.slick-prev{
+
+	top: 0px !important;
+    right: 0px !important;
+    background: red !important;
+	
+	
+}
+.active li  a {
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    
+}
